@@ -1,0 +1,93 @@
+﻿<Window x:Class="TimeTrackingSystem.Assets.View.Windows.LoginWindows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TimeTrackingSystem.Assets.View.Windows"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Авторизация" Height="550" Width="950"
+        ResizeMode="CanMinimize"
+        WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1">
+            <Image  Source="/Assets/Images/4436.jpg"/>
+        </Grid>
+
+        <Border Grid.Row="1" 
+              Background="#272537"
+              CornerRadius="0 80 0 0">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+
+                <Grid>
+                    <StackPanel>
+                        <TextBlock Text="Авторизуйся в системе"
+                                 HorizontalAlignment="Center"
+                                 Margin="0 30"
+                                 FontSize="24"
+                                 Foreground="#fff"
+                                 FontFamily="Assets/Fonts/BLANGKONRemastered-Regular.ttf#BLANGKONRemastered-Regular"
+                                 FontWeight="Bold"/>
+                        <Separator Width="300"
+                          Height="5"/>
+                    </StackPanel>
+                </Grid>
+
+
+                <Grid Grid.Row="1">
+                    <StackPanel>
+                        <DockPanel>
+                            <materialDesign:PackIcon Kind="Login" 
+                                                     Height="50" Width="50"
+                                                     VerticalAlignment="Center"
+                                                     Margin="20 0 0 0"
+                                                     Foreground="#fff"/>
+                            <TextBox  Style="{StaticResource CustomTextBox}"  
+                                      Name="loginTextBlock"/>
+                        </DockPanel>
+
+                        <DockPanel>
+                            <materialDesign:PackIcon Kind="Password" 
+                                                    Height="50" Width="50"
+                                                    VerticalAlignment="Center"
+                                                    Margin="20 0 0 0"
+                                                    Foreground="#fff"/>
+                            <PasswordBox Style="{StaticResource CustomPasswordBox}"
+                                         Name="passwordBoxUser"/>
+                        </DockPanel>
+                        <StackPanel Margin="10 50 0 10 ">
+                            <Button Content="Войти" 
+                                    Name="EnterLogin"
+                                    Click="EnterLogin_Click"
+                                    Style="{StaticResource CustomButton}"/>
+
+                        </StackPanel>
+                        <TextBlock Text="Регистрация компании..." 
+                                   Cursor="Hand"
+                                   Name="CompanyRegistration"
+                                   MouseDown="CompanyRegistration_MouseDown"
+                                   Foreground="#fff"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Bottom" Margin="50 70 50 50"/>
+                    </StackPanel>
+                </Grid>
+
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>
